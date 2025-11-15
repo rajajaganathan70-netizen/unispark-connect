@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router";
-import { Calendar, MapPin, Users, Trophy, Code, Presentation } from "lucide-react";
+import { Calendar, MapPin, Users, Trophy, Code, Presentation, Sparkles } from "lucide-react";
 
 export default function Events() {
   const navigate = useNavigate();
@@ -94,10 +94,23 @@ export default function Events() {
     }
   };
 
+  const getTypeBadgeColor = (type: string) => {
+    switch (type) {
+      case "Hackathon":
+        return "bg-blue-100 text-blue-700 hover:bg-blue-200";
+      case "Pitch Event":
+        return "bg-purple-100 text-purple-700 hover:bg-purple-200";
+      case "Workshop":
+        return "bg-pink-100 text-pink-700 hover:bg-pink-200";
+      default:
+        return "bg-gray-100 text-gray-700";
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       {/* Navigation */}
-      <nav className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <nav className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate("/")}>
@@ -114,15 +127,19 @@ export default function Events() {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold tracking-tight mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 mb-6">
+            <Sparkles className="w-4 h-4" />
+            <span className="text-sm font-semibold">Discover Amazing Events</span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Events & Hackathons
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -135,31 +152,35 @@ export default function Events() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-12"
+          className="mb-16"
         >
-          <Card className="border-2 border-purple-300 shadow-2xl bg-gradient-to-br from-blue-50 to-purple-50 overflow-hidden">
-            <div className="absolute top-4 right-4">
-              <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0">
-                Featured Event
-              </Badge>
-            </div>
-            <CardHeader className="pb-4">
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center flex-shrink-0">
-                  <Trophy className="w-8 h-8 text-white" />
+          <Card className="border-0 shadow-2xl bg-gradient-to-br from-blue-600 to-purple-600 overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24" />
+            
+            <CardHeader className="relative z-10 pb-4">
+              <div className="flex items-start justify-between mb-4">
+                <Badge className="bg-yellow-400 text-yellow-900 border-0 hover:bg-yellow-500">
+                  <Sparkles className="w-3 h-3 mr-1" />
+                  Featured Event
+                </Badge>
+              </div>
+              <div className="flex items-start gap-6">
+                <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                  <Trophy className="w-10 h-10 text-white" />
                 </div>
                 <div className="flex-1">
-                  <CardTitle className="text-3xl mb-2">{featuredEvent.title}</CardTitle>
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-                    <div className="flex items-center gap-1">
+                  <CardTitle className="text-3xl md:text-4xl text-white mb-4">{featuredEvent.title}</CardTitle>
+                  <div className="flex flex-wrap gap-4 text-sm text-white/90 mb-4">
+                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-lg">
                       <Calendar className="w-4 h-4" />
                       {featuredEvent.date}
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-lg">
                       <MapPin className="w-4 h-4" />
                       {featuredEvent.location}
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-lg">
                       <Users className="w-4 h-4" />
                       {featuredEvent.attendees} attendees
                     </div>
@@ -167,9 +188,9 @@ export default function Events() {
                 </div>
               </div>
             </CardHeader>
-            <CardContent>
-              <CardDescription className="text-base mb-6">{featuredEvent.description}</CardDescription>
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+            <CardContent className="relative z-10">
+              <p className="text-white/90 text-lg mb-6 max-w-3xl">{featuredEvent.description}</p>
+              <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 shadow-lg">
                 Register Now
               </Button>
             </CardContent>
@@ -177,46 +198,51 @@ export default function Events() {
         </motion.div>
 
         {/* Events Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {events.map((event, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              whileHover={{ y: -4 }}
-            >
-              <Card className="h-full border-2 hover:border-purple-300 transition-all shadow-md hover:shadow-xl">
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-3">
-                    <div className={`w-12 h-12 rounded-lg ${getTypeColor(event.type)} flex items-center justify-center`}>
-                      <event.icon className="w-6 h-6 text-white" />
+        <div>
+          <h2 className="text-3xl font-bold mb-8 text-gray-900">Upcoming Events</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {events.map((event, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              >
+                <Card className="h-full border-0 shadow-lg hover:shadow-2xl transition-all bg-white">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`w-14 h-14 rounded-xl ${getTypeColor(event.type)} flex items-center justify-center shadow-md`}>
+                        <event.icon className="w-7 h-7 text-white" />
+                      </div>
+                      <Badge className={getTypeBadgeColor(event.type)}>{event.type}</Badge>
                     </div>
-                    <Badge variant="secondary">{event.type}</Badge>
-                  </div>
-                  <CardTitle className="text-xl mb-2">{event.title}</CardTitle>
-                  <div className="space-y-1 text-sm text-gray-600">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
-                      {event.date}
+                    <CardTitle className="text-xl mb-3 line-clamp-2">{event.title}</CardTitle>
+                    <CardDescription className="text-sm mb-4 line-clamp-2">{event.description}</CardDescription>
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4 text-gray-400" />
+                        <span>{event.date}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-gray-400" />
+                        <span>{event.location}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Users className="w-4 h-4 text-gray-400" />
+                        <span>{event.attendees} attendees</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3" />
-                      {event.location}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-3 h-3" />
-                      {event.attendees} attendees
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="mb-4">{event.description}</CardDescription>
-                  <Button variant="outline" className="w-full">Register Now</Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                  </CardHeader>
+                  <CardContent>
+                    <Button variant="outline" className="w-full hover:bg-purple-50 hover:text-purple-600 hover:border-purple-300 transition-colors">
+                      Register Now
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
