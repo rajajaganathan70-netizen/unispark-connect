@@ -14,6 +14,7 @@ import TeamUp from "./pages/TeamUp.tsx";
 import PostIdea from "./pages/PostIdea.tsx";
 import Investors from "./pages/Investors.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import AIChatbot from "./components/AIChatbot.tsx";
 import "./types/global.d.ts";
 
 const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);
@@ -60,6 +61,8 @@ createRoot(document.getElementById("root")!).render(
             <Route path="/auth" element={<AuthPage redirectAfterAuth="/" />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <AIChatbot />
+          <AIChatbot />
         </BrowserRouter>
         <Toaster />
       </ConvexAuthProvider>
