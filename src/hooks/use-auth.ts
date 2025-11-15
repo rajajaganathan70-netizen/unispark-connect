@@ -9,7 +9,7 @@ export function useAuth() {
   const { signIn, signOut } = useAuthActions();
   
   // Apply explicit type to break circular inference
-  // @ts-expect-error - TypeScript has excessive type instantiation with Convex useQuery
+  // @ts-expect-error - TypeScript has issues with deep Convex type inference
   const userQuery = (useQuery as any)(api.users.currentUser) as unknown as UserQueryResult;
 
   const [isLoading, setIsLoading] = useState(true);
