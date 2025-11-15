@@ -8,9 +8,11 @@
  * @module
  */
 
+import type * as ai_openai from "../ai/openai.js";
 import type * as auth from "../auth.js";
 import type * as auth_emailOtp from "../auth/emailOtp.js";
 import type * as http from "../http.js";
+import type * as ideas from "../ideas.js";
 import type * as users from "../users.js";
 
 import type {
@@ -20,9 +22,11 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  "ai/openai": typeof ai_openai;
   auth: typeof auth;
   "auth/emailOtp": typeof auth_emailOtp;
   http: typeof http;
+  ideas: typeof ideas;
   users: typeof users;
 }>;
 
