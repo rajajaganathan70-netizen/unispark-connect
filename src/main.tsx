@@ -62,7 +62,6 @@ createRoot(document.getElementById("root")!).render(
             <Route path="*" element={<NotFound />} />
           </Routes>
           <AIChatbot />
-          <AIChatbot />
         </BrowserRouter>
         <Toaster />
       </ConvexAuthProvider>
