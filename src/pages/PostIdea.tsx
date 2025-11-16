@@ -28,7 +28,7 @@ export default function PostIdea() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate("/")}>
               <img src="https://harmless-tapir-303.convex.cloud/api/storage/e8782043-502f-42c7-80c7-40fe01ad8b24" alt="UniSpark" className="h-10 w-10" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">UniSpark</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">UniSpark</span>
             </div>
             <div className="hidden md:flex items-center gap-6">
               <button onClick={() => navigate("/events")} className="text-gray-700 hover:text-purple-600 transition-colors">Events</button>
@@ -48,10 +48,10 @@ export default function PostIdea() {
             transition={{ duration: 0.6 }}
           >
             <div className="text-center mb-8">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mx-auto mb-4">
                 <Lightbulb className="w-8 h-8 text-white" />
               </div>
-              <h1 className="text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                 Post Your Startup Idea
               </h1>
               <p className="text-lg text-gray-600">
@@ -117,7 +117,7 @@ export default function PostIdea() {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                    className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700"
                   >
                     Post Idea & Find Co-Founders
                   </Button>
@@ -150,7 +150,7 @@ export default function PostIdea() {
                   <Button 
                     onClick={() => navigate("/team-up")}
                     size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                    className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700"
                   >
                     Browse Co-Founders
                   </Button>

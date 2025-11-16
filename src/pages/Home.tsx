@@ -76,14 +76,14 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
             Find Co-Founders, Join Hackathons, Connect With Investors
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             UniSpark helps students with ideas match with skilled teammates and get noticed by investors — all inside your university.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button onClick={() => navigate("/team-up")} size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+            <Button onClick={() => navigate("/team-up")} size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700">
               Find Co-Founder
             </Button>
             <Button onClick={() => navigate("/events")} size="lg" variant="outline">
@@ -104,7 +104,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
             Why UniSpark?
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -117,9 +117,9 @@ export default function Home() {
                 viewport={{ once: true }}
                 whileHover={{ y: -4 }}
               >
-                <Card className="h-full border-2 hover:border-purple-300 transition-all shadow-md hover:shadow-xl">
+                <Card className="h-full border-2 hover:border-green-300 transition-all shadow-md hover:shadow-xl">
                   <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mb-4">
                       <feature.icon className="w-6 h-6 text-white" />
                     </div>
                     <CardTitle className="text-lg">{feature.title}</CardTitle>
@@ -155,12 +155,12 @@ export default function Home() {
                 viewport={{ once: true }}
                 whileHover={{ y: -4 }}
               >
-                <Card className="text-center border-2 hover:border-purple-300 transition-all shadow-md hover:shadow-xl">
+                <Card className="text-center border-2 hover:border-green-300 transition-all shadow-md hover:shadow-xl">
                   <CardHeader>
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mx-auto mb-4">
                       <step.icon className="w-8 h-8 text-white" />
                     </div>
-                    <div className="text-sm font-semibold text-purple-600 mb-2">Step {index + 1}</div>
+                    <div className="text-sm font-semibold text-green-600 mb-2">Step {index + 1}</div>
                     <CardTitle className="text-xl">{step.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -181,7 +181,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <Card className="bg-gradient-to-r from-blue-600 to-purple-600 border-0 shadow-2xl">
+          <Card className="bg-gradient-to-r from-green-600 to-emerald-600 border-0 shadow-2xl">
             <CardHeader className="text-center py-12">
               <CardTitle className="text-4xl font-bold text-white mb-4">
                 Ready to Start Your Startup Journey?
@@ -190,7 +190,7 @@ export default function Home() {
                 Join thousands of student entrepreneurs building the future
               </CardDescription>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button onClick={() => navigate("/post-idea")} size="lg" variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
+                <Button onClick={() => navigate("/post-idea")} size="lg" variant="secondary" className="bg-white text-green-600 hover:bg-gray-100">
                   Post Your Idea
                 </Button>
                 <Button onClick={() => navigate("/team-up")} size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
