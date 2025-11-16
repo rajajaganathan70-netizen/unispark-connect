@@ -114,13 +114,13 @@ export default function Events() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate("/")}>
-              <img src="https://harmless-tapir-303.convex.cloud/api/storage/e8782043-502f-42c7-80c7-40fe01ad8b24" alt="UniSpark" className="h-10 w-10" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">UniSpark</span>
+              <img src="https://harmless-tapir-303.convex.cloud/api/storage/5178ae7a-f761-4842-be18-5fb520d6f4b9" alt="UniSpark" className="h-10 w-10" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">UniSpark</span>
             </div>
             <div className="hidden md:flex items-center gap-6">
-              <button onClick={() => navigate("/events")} className="text-purple-600 font-semibold">Events</button>
-              <button onClick={() => navigate("/team-up")} className="text-gray-700 hover:text-purple-600 transition-colors">Team Up</button>
-              <button onClick={() => navigate("/investors")} className="text-gray-700 hover:text-purple-600 transition-colors">Investors</button>
+              <button onClick={() => navigate("/events")} className="text-green-600 font-semibold">Events</button>
+              <button onClick={() => navigate("/team-up")} className="text-gray-700 hover:text-green-600 transition-colors">Team Up</button>
+              <button onClick={() => navigate("/investors")} className="text-gray-700 hover:text-green-600 transition-colors">Investors</button>
               <Button onClick={() => navigate("/auth")} variant="outline">Sign In</Button>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function Events() {
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-semibold">Discover Amazing Events</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
             Events & Hackathons
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -198,8 +198,8 @@ export default function Events() {
         </motion.div>
 
         {/* Events Grid */}
-        <div>
-          <h2 className="text-3xl font-bold mb-8 text-gray-900">Upcoming Events</h2>
+          <div>
+          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Upcoming Events</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {events.map((event, index) => (
               <motion.div
@@ -235,7 +235,7 @@ export default function Events() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <Button variant="outline" className="w-full hover:bg-purple-50 hover:text-purple-600 hover:border-purple-300 transition-colors">
+                    <Button variant="outline" className="w-full hover:bg-green-50 hover:text-green-600 hover:border-green-300 transition-colors">
                       Register Now
                     </Button>
                   </CardContent>
